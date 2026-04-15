@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>(java)로그인 - 로그인, 회원가입 - 회원가입</title>
+  </head>
+  <body>
+    <button onclick="handleclick('login')">로그인</button>
+    <button onclick="handleclick('join')">회원가입</button>
+    <button onclick="handleclick('logout')">로그아웃</button>
+    <button onclick="handleclick('1')">1</button>
+    <script>
+      function handleclick(type) {
+        console.log(type);
+        switch (type) {
+          case "login":
+            console.log("로그인 처리!");
+            break;
+
+          case "join":
+            console.log("join 처리!");
+            break;
+
+          case "logout":
+            console.log("로그아웃 처리!");
+
+            break;
+            default: console.log("잘못된 요청")
+        }
+      }
+    </script>
+  </body>
+</html>
