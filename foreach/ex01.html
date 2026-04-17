@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach()</title>
+</head>
+<body>
+    <script>
+        // 인수 < 매게변수
+        const fruits = ["사과" , "바나나", "포도", "망고" , "수박", "토마토"] //인수
+        // console.log(fruits);
+        fruits.forEach(function(fruit , index){ //매게변수
+            console.log(fruit); 
+            console.log(index);
+            document.write(`과일: ${index + 1}  ${fruit} <br>`)
+        })
+        
+    </script>
+
+</body>
+</html>
