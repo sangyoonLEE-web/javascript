@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문자열 예제</title>
+    <style>
+*{
+    box-sizing: border-box;
+}
+
+      body {
+        font-family: sans-serif;
+        padding: 30px;
+        background: #f5f5f5;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      input {
+        display: block;
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .result {
+        margin-top: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 10px;
+      }
+      .tag{
+        text-decoration: underline;
+        color: blue;
+        display: inline-block;
+        padding: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>회원 정보 입력</h2>
+    <input type="text" id="name" placeholder="이름 입력 (예:hong)" />
+    <input type="text" id="email" placeholder="이메일 입력 " />
+    <input type="text" id="hobby" placeholder="관심사 입력 (예:운동)" />
+
+    <button id="btn">확인</button>
+
+    <!-- 출력되는곳 -->
+    <div id="result">
+      <!-- js 출력 -->
+       <!-- <p>이름:</p>
+       <p>이메일 정상</p>
+       <p>이메일 형식에 맞지 않습니다.</p>
+       <p>관심사 : </p> -->
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn") //자체가 ID라서 # 안붙여도 된다.
+        const result = document.getElementById("result") //자체가 ID라서 # 안붙여도 된다.
+        btn.addEventListener("click", () =>{
+            const name = document.getElementById("name").value          
+            const email = document.getElementById("email").value          
+            const hobby = document.getElementById("hobby").value 
+            //console.log(name,email,hobby); 
+            // 1. trim() toUppercase()
+            const CleanName = name.trim().toUpperCase() // 2단계
+
+            //2. includes(이메일 검사 @ 포함여부)
+            const isEmail = email.includes("@")
+            //3. splite(취미 나누기)
+            const hobbyList = hobby.split(",") // , 거점으로 나누겠다. 
+
+            //4. 결과출력
+            let html= ""
+            //이름
+            html += `<p>이름:</p>${CleanName}` //
+
+            //이메일 조건문
+            if(isEmail){
+                html += `<p style = "color:green">이메일 정상</p>`
+            }else{
+                html += `<p style = "color:red">이메일 형식에 맞지않습니다<p>`
+            }
+            html += `<p>관심사:  <p>`
+
+            // 관심사 출력(하나가 아니기때문에 forEach()) 
+            hobbyList.forEach((item)=>{
+                // console.log(item);
+                html += `<span class="tag"> ${item.trim()} </span> `
+            })   
+            //화면 출력
+            result.innerHTML = html; 
+        });
+    </script>
+
+
+  </body>
+</html>

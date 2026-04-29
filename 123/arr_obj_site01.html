@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 리스트</title>
+    <style>
+
+
+      #list {
+        display: flex;
+        gap: 10px;
+      }
+      .card {
+        padding: 10px;
+        border: 1px solid #777;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>상품 목록</h1>
+    <div id="list">
+      <!-- js 출력 -->
+
+      <script>
+        const products = [
+          { name: "노트북", price: 1200000 },
+          { name: "마우스", price: 30000 },
+          { name: "키보드", price: 80000 },
+        ];
+        // 데이터 추가 push로.
+        products.push({ name: "모니터", price: 50000 });
+        console.log(products);
+        // 첫번째 상품 제거 shift()
+        products.splice(
+          1,
+          1,
+          { name: "게이밍 키보드", price: 50000 },
+          { name: "게이밍 마우스", price: 40000 },
+        );
+        console.log(products);
+        // 화면에 출력 forEach()
+        const list = document.getElementById("list");
+        let html = "";
+        products.forEach((item) => {
+          // console.log(item);
+          html += `  <div>
+        <h3>이름 : ${item.name}</h3>
+        <p>가격 : ${item.price.toLocaleString()}원</p>
+       </div>
+            `;
+        });
+        list.innerHTML = html;
+        //가격만 따로 문자열로 만들기 - join()
+        const priceList = products.map((p) => {
+          console.log(p.price);
+          return p.price;
+        });
+        console.log(`가격목록 : ${priceList.join("==")}`);
+        const price = document.getElementById("price");
+        price.innderText = PriceList.join("==");
+      </script>
+    </div>
+  </body>
+</html>
