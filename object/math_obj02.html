@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math 색변경</title>
+</head>
+<body>
+    <button>색변경</button>
+    <script>
+        const btn = document.querySelector("button")
+        // 색 변경하는 함수
+        function randomColor(){
+            //console.log(number)
+             //Math.floor(Math.random() * (num + 1))
+            //console.log(Math.floor(Math.random()));
+           // console.log("click");
+           const  r = Math.floor(Math.random() * 256)
+           console.log(r);
+           const  g = Math.floor(Math.random() * 256)
+           const  b = Math.floor(Math.random() * 256)
+           const bg_color = `rgb(${r} , ${g} , ${b})`
+           // console.log(bgColor);
+            document.body.style.backgroundColor = bg_color;
+            //원하는 색깔을 바꾸는 코딩 끝.
+            
+
+        }
+
+        random(255); 
+        btn.addEventListener("click", ()=>{
+
+        
+        })
+    </script>
+
+
+
+</body>
+</html>
